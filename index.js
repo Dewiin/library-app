@@ -55,6 +55,7 @@ function displayBooks() {
         deleteButton.addEventListener("click", (e) => {
             e.target.parentElement.parentElement.parentElement.remove();
             myLibrary.splice(index, 1);
+            displayBooks();
         });
     });
 
@@ -71,7 +72,7 @@ openModal.addEventListener("click", () => {
 window.onclick = function(e) {
     const modal = document.querySelector(".modal");
     if (e.target == modal) {
-      modal.style.display = "none";
+        modal.style.display = "none";
     }
 }
 
@@ -79,24 +80,27 @@ window.onclick = function(e) {
 // Add book
 const addButton = document.querySelector(".addToLibrary");
 addButton.addEventListener("click", (e) => {
-    e.preventDefault();
     const form = document.querySelector(".modalInputs");
-    const title = document.querySelector("#bookTitle").value;
-    const author = document.querySelector("#bookAuthor").value;
-    const pages = document.querySelector('#bookPages').value;
+    e.preventDefault();
 
     if (!form.checkValidity()) {
         form.reportValidity(); 
         return; 
     }
+
+    const title = document.querySelector("#bookTitle").value;
+    const author = document.querySelector("#bookAuthor").value;
+    const pages = document.querySelector('#bookPages').value;
     
     const book = new Book(title, author, pages);
     addBookToLibrary(book);
 
+    // reset input fields
     document.querySelector("#bookTitle").value = "";
     document.querySelector("#bookAuthor").value = "";
     document.querySelector('#bookPages').value = "";
 
+    // close modal after adding book
     const modal = document.querySelector(".modal");
     modal.style.display = "none";
     
