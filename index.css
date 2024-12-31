@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Cute+Font&family=Fontdiner+Swanky&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --font: "Cute Font", sans-serif;
+    --font-color: rgb(200, 200, 200);
+    --header-bg-color: rgb(57, 57, 58);
+    --content-bg-color: rgb(155, 155, 147);
+    --shadow: rgb(193, 176, 152);
+    --button-size: 75px;
+    --read-button: rgb(105, 128, 36);
+    --button-color: rgb(194, 153, 121);
+    --delete-button: rgb(162, 37, 34);
+    --modal-bg-color: rgb(239, 208, 202);
+    --modal-button: rgb(188, 78, 56)
+}
+
+
+* {
+    font-family: var(--font);
+}
+
+
+body {
+    margin: 0;
+}
+
+
+/* Header */
+.header {
+    height: 15vh;
+    width: 100vw;
+    min-height: 140px;
+    background-color: var(--header-bg-color);
+    box-shadow: 0 0.5rem 20px var(--shadow);
+    align-content: center;
+    position: fixed;
+}
+
+.title {
+    color: var(--font-color);
+    text-align: center;
+    margin: auto;
+    font-size: 96px;
+    text-shadow: 0 0.1rem 20px var(--shadow);
+}
+
+
+
+/* Content */
+.content {
+    min-height: 100vh;
+    background-color: var(--content-bg-color);
+    padding: 15rem 0 5rem;
+    display: grid;
+    gap: 40px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, min(400px, 50vw));
+    grid-template-rows: repeat(auto-fill, min(250px, 50vh));
+}
+
+.card {
+    height: 240px;
+    width: 400px;
+    background-color: var(--shadow);
+    box-shadow: 0 5px 10px var(--header-bg-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+.addButton:hover {
+    transform: scale(1.1);
+    transition-duration: 150ms;
+    cursor: pointer;
+}
+.addButton > p {
+    font-size: 32px;
+    color: var(--header-bg-color)
+}
+.addButton > button {
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: 100%;
+    border: 1px solid ;
+    font-size: 64px;
+    background-color: var(--button-color);
+    color: var(--header-bg-color);
+}
+
+
+/* Cards */
+.card > div {
+    margin: 2rem;
+}
+
+.infoHeader > * {
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+}
+
+.actionsButtons > button {
+    width: 6rem;
+    font-size: 24px;
+    color: #1e000e;
+    border-radius: 10px;
+    border: 1px solid;
+}
+.actionsButtons > button:active {
+    transform: scale(0.7);
+    transition-duration: 200ms;
+}
+
+.buttonsRead {
+    background-color: var(--read-button);
+}
+.buttonsDelete {
+    background-color: var(--delete-button);
+}
+
+/* Modal */
+.modal {
+    /* display: none; */
+    position: fixed;
+    align-content: center;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+    box-shadow: 0px 5px 10px var(--delete-button);
+    width: min(500px, 50vw);
+    min-width: 540px;
+    height: 80vh;
+    min-height: 700px;
+    background-color: var(--modal-bg-color);
+    color: var(--delete-button);
+    padding: 20px;
+    margin: auto;
+    border-radius: 20px;
+    font-size: 64px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.modalInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.modalInputs > input {
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px 2rem;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 5px solid var(--modal-button);
+    width: 25rem;
+    font-size: 32px;
+}
+.modalInputs > button {
+    border-radius: 20px;
+    border: none;
+    margin: 5rem 0;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    background-color: var(--delete-button);
+    color: var(--font-color);
+}

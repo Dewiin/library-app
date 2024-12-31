@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <p class="title">Library</p>
+    </div>
+    <div class="content">
+        <div class="card">
+            <div class="infoHeader">
+                <h1>The Hobbit </h1>
+                <h2>by J.R.R. Tolkien</h2>
+                <h3>304 pages</h3>
+            </div>
+            <div class="actions">
+                <div class="actionsButtons">
+                    <button class="buttonsRead">Read</button>
+                    <button class="buttonsDelete">Delete</button>
+                </div>
+                <div class="actionsStatus">
+                    Completed
+                </div>
+            </div>
+        </div>
+        <div class="card"></div>
+    </div>
+    <div class="addButton">
+        <p>Add a Book →</p>
+        <button>+</button>
+    </div>
+        <div class="modal">
+            <div class="modalContent">
+                <p>New Book</p>
+                <form class="modalInputs">
+                    <input type="text" placeholder="Title" name="bookTitle" id="bookTitle" required>
+                    <input type="text" placeholder="Author" name="bookAuthor" id="bookAuthor" required>
+                    <input type="number" min=1 placeholder="Pages" name="bookPages" id="bookPages" required>
+                    <button type="submit" class="addToLibrary"> Add to Library </button>
+                </form>
+            </div>
+        </div>
+</body>
+</html>
