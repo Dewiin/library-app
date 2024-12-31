@@ -22,6 +22,7 @@
 
 body {
     margin: 0;
+    overflow: scroll;
 }
 
 
@@ -94,6 +95,7 @@ body {
     font-size: 64px;
     background-color: var(--button-color);
     color: var(--header-bg-color);
+    cursor: pointer;
 }
 
 
@@ -120,6 +122,9 @@ body {
     border-radius: 10px;
     border: 1px solid;
 }
+.actionsButtons > button:hover {
+    cursor: pointer;
+}
 .actionsButtons > button:active {
     transform: scale(0.7);
     transition-duration: 200ms;
@@ -134,7 +139,7 @@ body {
 
 /* Modal */
 .modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     align-content: center;
     z-index: 10;
@@ -185,4 +190,9 @@ body {
     padding: 0.5rem 1rem;
     background-color: var(--delete-button);
     color: var(--font-color);
+    cursor: pointer;
+}
+.addToLibrary:hover {
+    transform: scale(1.1);
+    transition-duration: 200ms;
 }
