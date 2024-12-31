@@ -7,7 +7,6 @@
     --content-bg-color: rgb(155, 155, 147);
     --shadow: rgb(193, 176, 152);
     --button-size: 75px;
-    --read-button: rgb(105, 128, 36);
     --button-color: rgb(194, 153, 121);
     --delete-button: rgb(162, 37, 34);
     --modal-bg-color: rgb(239, 208, 202);
@@ -130,9 +129,6 @@ body {
     transition-duration: 200ms;
 }
 
-.buttonsRead {
-    background-color: var(--read-button);
-}
 .buttonsDelete {
     background-color: var(--delete-button);
 }

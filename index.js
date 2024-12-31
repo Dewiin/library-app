@@ -1,9 +1,10 @@
 const myLibrary = [];
 
-function Book(title, author, pages) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.read = read;
 }
 
 function addBookToLibrary(bookObject) {
@@ -18,6 +19,8 @@ function displayBooks() {
         const div = document.createElement("div");
         div.classList.add("card");
 
+        const read = (book.read) ? "Read" : "Not Read";
+
         div.innerHTML = `
             <div class="infoHeader">
                 <h1> ${book.title} </h1>
@@ -26,7 +29,7 @@ function displayBooks() {
             </div>
             <div class="actions">
                 <div class="actionsButtons">
-                    <button class="buttonsRead">Read</button>
+                    <button class="buttonsRead">${read}</button>
                     <button class="buttonsDelete">Delete</button>
                 </div>
                 <div class="actionsStatus">
@@ -40,13 +43,17 @@ function displayBooks() {
 
     // Read book
     const readButtons = document.querySelectorAll(".buttonsRead");
-    readButtons.forEach((readButton) => {
+    readButtons.forEach((readButton, index) => {
         readButton.addEventListener("click", (e) => {
-            e.target.textContent = (e.target.textContent == "Read") ? "Not Read" : "Read";
-            e.target.style.backgroundColor = (e.target.textContent == "Read") ? "rgb(105, 128, 36)" : "rgb(168, 194, 86)";
+            myLibrary[index].read = !myLibrary[index].read;
+            e.target.textContent = (myLibrary[index].read) ? "Read" : "Not Read";
+            e.target.style.backgroundColor = (myLibrary[index].read) ? "rgb(105, 128, 36)" : "rgb(168, 194, 86)";
             const status = e.target.parentElement.nextElementSibling;
-            status.textContent = (e.target.textContent == "Read") ? "Completed" : "In Progress";
+            status.textContent = (myLibrary[index].read) ? "Completed" : "In Progress";
         });
+        readButton.style.backgroundColor = (myLibrary[index].read) ? "rgb(105, 128, 36)" : "rgb(168, 194, 86)";
+        const status = readButton.parentElement.nextElementSibling;
+        status.textContent = (myLibrary[index].read) ? "Completed" : "In Progress";
     });
 
     // Delete book
@@ -92,7 +99,7 @@ addButton.addEventListener("click", (e) => {
     const author = document.querySelector("#bookAuthor").value;
     const pages = document.querySelector('#bookPages').value;
     
-    const book = new Book(title, author, pages);
+    const book = new Book(title, author, pages, false);
     addBookToLibrary(book);
 
     // reset input fields
