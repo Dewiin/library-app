@@ -38,7 +38,7 @@ A simple book management app built with HTML, CSS, and JavaScript. Users can add
 
 
 ## Future Improvements
-- [ ] Add animations and background music
+- [ ] Add user authentication so that entries are saved
 - [ ] Add responsive design for mobile users
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
