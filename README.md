@@ -27,7 +27,7 @@ A simple book management app built with HTML, CSS, and JavaScript. Users can add
 - ➕ Add Books – Quickly add books to your library 
 - ❌ Remove Books – Delete books when you're done with them
 - ✅ Mark as Read/Unread – Toggle book status with a click
-- 🎨 Minimalist UI – Clean and user-friendly design
+- 🎨 Minimalist UI – Clean and user-friendly design 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 ## Built With 
