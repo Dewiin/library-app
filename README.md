@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 # Library App
 
 <div align="center">
@@ -14,6 +16,7 @@
     <li>
     <a href="#features">Features</a>
     </li>
+    <li><a href="#demo">Demo</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
 </ol>
@@ -40,6 +43,13 @@ A simple book management app built with HTML, CSS, and JavaScript. Users can add
 ## Future Improvements
 - [ ] Add user authentication so that entries are saved
 - [ ] Add responsive design for mobile users
+<p align="right"><a href="#readme-top">Back to top</a></p>
+
+
+## Demo
+<div align="center">
+    <img src="./library_demo.png" alt="demo video">
+</div>
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 
